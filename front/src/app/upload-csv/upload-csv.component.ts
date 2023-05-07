@@ -28,7 +28,7 @@ export class UploadCsvComponent {
           this.results = response;
         },
         (error) => {
-          console.error('Error al calcular las similitudes:', error);
+          console.error('Error al calcular las similitudes: ', error);
         }
       );
     }
