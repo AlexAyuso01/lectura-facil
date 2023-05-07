@@ -9,6 +9,12 @@ import { SimilarityService } from '../similarity.service';
 export class UploadCsvComponent {
   file: File | null = null;
   results: any[] = [];
+  isLoading: boolean = false;
+  modelNames = [
+    "Maite89/Roberta_finetuning_semantic_similarity_stsb_multi_mt",
+    "symanto/sn-xlm-roberta-base-snli-mnli-anli-xnli",
+    "hiiamsid/sentence_similarity_spanish_es",
+  ];  
 
   constructor(private similarityService: SimilarityService) {}
 
@@ -21,16 +27,22 @@ export class UploadCsvComponent {
     }
   }
 
-  onSubmit() {
-    if (this.file) {
-      this.similarityService.calculateSimilarities(this.file).subscribe(
-        (response) => {
-          this.results = response;
-        },
-        (error) => {
-          console.error('Error al calcular las similitudes: ', error);
-        }
-      );
+  onSubmit(): void {
+    if (!this.file) {
+      return;
     }
-  }
+  
+    this.isLoading = true;
+  
+    this.similarityService.calculateSimilarities(this.file).subscribe(
+      (response) => {
+        this.results = response;
+        this.isLoading = false;
+      },
+      (error) => {
+        console.error("Error al calcular las similitudes: ", error);
+        this.isLoading = false;
+      }
+    );
+  }  
 }

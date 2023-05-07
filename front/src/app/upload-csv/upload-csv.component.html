@@ -1,38 +1,123 @@
-<div *ngIf="!results.length">
-  <label for="file-upload" class="custom-file-upload">
-    Seleccionar archivo CSV
-  </label>
+<div class="container">
+  <div class="initial-page" *ngIf="!results.length">
+    <div class="header-container">
+      <img class="logo-upm" src="assets/logos/UPM.png" alt="Logo Universidad" />
+      <h1 class="title">Calculadora de Similitud de Texto</h1>
+      <img
+        class="logo-etsiinf"
+        src="assets/logos/ETSIINF.jpeg"
+        alt="Logo Facultad"
+      />
+    </div>
 
-  <input
-    id="file-upload"
-    type="file"
-    accept=".csv"
-    (change)="onFileSelected($event)"
-  />
-  <button (click)="onSubmit()">Calcular similitudes</button>
-</div>
+    <div class="intro">
+      <p>
+        Bienvenido a la Calculadora de Similitud de Texto. Esta aplicación te
+        permite cargar archivos CSV que contienen pares de frases y calcular la
+        similitud semántica entre ellas utilizando diferentes modelos de
+        lenguaje. Los modelos de lenguaje utilizados en esta aplicación son de
+        última generación y proporcionan resultados precisos en la medición de
+        la similitud semántica entre las frases.
+      </p>
+      <p>
+        El archivo CSV debe tener un formato específico para funcionar
+        correctamente con esta aplicación. Debe contener cuatro columnas
+        separadas por punto y coma (;): tipo_frase_original, frase_original,
+        frase_adaptada y semanticamente_similares. La aplicación procesará el
+        archivo y calculará las similitudes semánticas entre las frases
+        originales y adaptadas en cada fila.
+      </p>
+      <p>
+        Los modelos de lenguaje utilizados en esta aplicación son los
+        siguientes:
+      </p>
+      <ul>
+        <li>
+          <a
+            href="https://huggingface.co/Maite89/Roberta_finetuning_semantic_similarity_stsb_multi_mt"
+            target="_blank"
+            >Maite89/Roberta_finetuning_semantic_similarity_stsb_multi_mt</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://huggingface.co/symanto/sn-xlm-roberta-base-snli-mnli-anli-xnli"
+            target="_blank"
+            >symanto/sn-xlm-roberta-base-snli-mnli-anli-xnli</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://huggingface.co/hiiamsid/sentence_similarity_spanish_es"
+            target="_blank"
+            >hiiamsid/sentence_similarity_spanish_es</a
+          >
+        </li>
+      </ul>
+      <p>
+        Para utilizar la aplicación, simplemente carga un archivo CSV con el
+        formato adecuado y presiona el botón "Calcular similitudes". La
+        aplicación procesará el archivo y calculará las similitudes utilizando
+        múltiples modelos de lenguaje. Los resultados se mostrarán en una tabla,
+        donde podrás ver las puntuaciones de similitud para cada par de frases y
+        comparar los resultados de los diferentes modelos.
+      </p>
+      <p>
+        Esta herramienta es ideal para investigadores, lingüistas, profesionales
+        de procesamiento del lenguaje natural y cualquier persona interesada en
+        explorar la similitud semántica entre fragmentos de texto.
+      </p>
+    </div>
+    <div class="input-container">
+      <label for="file-upload" class="custom-file-upload">
+        Seleccionar archivo CSV
+      </label>
 
-<div *ngIf="results.length">
-  <table>
-    <thead>
-      <tr>
-        <th>Frase Original</th>
-        <th>Frase Adaptada</th>
-        <th>Similitudes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let result of results">
-        <td>{{ result.frase_original }}</td>
-        <td>{{ result.frase_adaptada }}</td>
-        <td>
-          <ul>
-            <li *ngFor="let similarity of result.similitudes">
-              {{ similarity | number : "1.2-2" }}
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+      <input
+        id="file-upload"
+        type="file"
+        accept=".csv"
+        (change)="onFileSelected($event)"
+      />
+      <span *ngIf="file" class="file-name"
+        >Archivo seleccionado: {{ file.name }}</span
+      >
+    </div>
+    <button class="calculate-button" (click)="onSubmit()">
+      Calcular similitudes
+    </button>
+    <p *ngIf="isLoading">Calculando similitudes...</p>
+    <div *ngIf="isLoading" class="spinner"></div>
+  </div>
+  <div *ngIf="results.length">
+    <h2>Resumen de Similitudes</h2>
+    <div class="model-list">
+      <h3>Modelos:</h3>
+      <ul>
+        <li *ngFor="let model of modelNames; let i = index">
+          Modelo {{ i + 1 }}: {{ model }}
+        </li>
+      </ul>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Frase Original</th>
+          <th>Frase Adaptada</th>
+          <th>Similitudes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results">
+          <td>{{ result.frase_original }}</td>
+          <td>{{ result.frase_adaptada }}</td>
+          <td>
+            <p *ngFor="let similarity of result.similitudes; let i = index">
+              Modelo {{ i + 1 }}: {{ similarity | number : "1.2-2" }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
