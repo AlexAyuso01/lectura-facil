@@ -89,35 +89,4 @@
     <p *ngIf="isLoading">Calculando similitudes...</p>
     <div *ngIf="isLoading" class="spinner"></div>
   </div>
-  <div *ngIf="results.length">
-    <h2>Resumen de Similitudes</h2>
-    <div class="model-list">
-      <h3>Modelos:</h3>
-      <ul>
-        <li *ngFor="let model of modelNames; let i = index">
-          Modelo {{ i + 1 }}: {{ model }}
-        </li>
-      </ul>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Frase Original</th>
-          <th>Frase Adaptada</th>
-          <th>Similitudes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let result of results">
-          <td>{{ result.frase_original }}</td>
-          <td>{{ result.frase_adaptada }}</td>
-          <td>
-            <p *ngFor="let similarity of result.similitudes; let i = index">
-              Modelo {{ i + 1 }}: {{ similarity | number : "1.2-2" }}
-            </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>

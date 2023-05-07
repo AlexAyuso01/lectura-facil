@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="header">
+    <button class="back-button" (click)="goToHomePage()">
+      Regresar a la página principal
+    </button>
+    <h2>Resumen de Similitudes</h2>
+  </div>
+  <div class="model-list">
+    <h3>Modelos:</h3>
+    <ul>
+      <li *ngFor="let model of modelNames; let i = index">
+        Modelo {{ i + 1 }}: {{ model }}
+      </li>
+    </ul>
+    <p>
+      En la columna de Similitudes, 1.0 significa semánticamente similares y 0.0
+      significa no semánticamente similares.
+    </p>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Frase Original</th>
+        <th>Frase Adaptada</th>
+        <th>Similitudes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.frase_original }}</td>
+        <td>{{ result.frase_adaptada }}</td>
+        <td>
+          <p *ngFor="let similarity of result.similitudes; let i = index">
+            Modelo {{ i + 1 }}: {{ similarity | number : "1.2-2" }}
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

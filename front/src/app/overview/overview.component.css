@@ -7,28 +7,27 @@
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-  }
-  
-  .logo-upm {
-    width: 250px;
-    height: auto;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
 
-  .logo-etsiinf {
-    width: 120px;
-    height: auto;
-  }
+.logo-upm {
+  width: 250px;
+  height: auto;
+}
 
-  .title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
+.logo-etsiinf {
+  width: 120px;
+  height: auto;
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 .intro {
   margin-bottom: 20px;
@@ -124,39 +123,18 @@ button {
 }
 
 .calculate-button {
-  background-color: #28a745; /* Cambia el color de fondo a verde */
+  background-color: #28a745;
   color: white;
-  padding: 8px 16px; /* Aumenta el relleno */
-  font-size: 18px; /* Aumenta el tamaño de la fuente */
+  padding: 8px 16px;
+  font-size: 18px;
   border-radius: 4px;
   cursor: pointer;
   border: none;
   margin-top: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); /* Agrega un efecto de sombra */
-  transition: box-shadow 0.3s ease; /* Transición suave al pasar el cursor sobre el botón */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease;
 }
 
 .calculate-button:hover {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35); /* Cambia la sombra al pasar el cursor sobre el botón */
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 20px;
-}
-
-thead {
-  background-color: #f2f2f2;
-}
-
-th,
-td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-tr:hover {
-  background-color: #f5f5f5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
 }
