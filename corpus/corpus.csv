@@ -1,0 +1,24 @@
+tipo_frase_original;frase_original;frase_adaptada;semanticamente_similares
+Pasiva;El libro fue escrito por mi amigo.;Mi amigo escribió el libro.;SI
+Pasiva;El libro fue escrito por mi amigo.;El artículo fue escrito por el periodista.;NO
+Pasiva;El libro fue escrito por Juan Gómez.;Juan Gómez escribió el libro.;SI
+Pasiva;El libro fue escrito por Juan Gómez.;El artículo fue escrito por Juan Gómez.;NO
+Pasiva;La casa fue construida en 1905 por mi bisabuelo;Mi bisabuelo construyó la casa en 1905.;
+Pasiva;La comida fue preparada por el chef famoso;El chef famoso preparó la comida;
+Pasiva;El coche fue vendido por el concesionario;El concesionario vendió el coche;
+Pasiva;La película fue dirigida por el famoso cineasta;La película fue dirigida por el famoso cineasta;
+Pasiva;El jardín fue regado por el jardinero;La dueña del jardín regó sus plantas y flores;
+Pasiva;El cuadro fue pintado por el artista famoso;El cuadro fue vendido en una subasta a un precio elevado;
+Pasiva;Los billetes de avión fueron comprados por internet;Los billetes de avión fueron comprados en una agencia de viajes;
+Pasiva;La carta fue enviada por correo postal;La carta nunca llegó a su destino;
+Pasiva;El libro fue escrito por el autor más vendido de la editorial;La editorial publicó el libro más vendido del autor;
+Perífrasis verbal;Tengo que ir al supermercado después del trabajo;Después del trabajo, debo ir al supermercado;
+Perífrasis verbal;Estoy pensando en comprar un coche nuevo;Estoy considerando comprar un coche nuevo;
+Perífrasis verbal;Él acaba de salir de la universidad y está buscando trabajo; Él está en búsqueda de trabajo después de salir de la universidad;
+Perífrasis verbal;Vamos a tener que empezar a ahorrar si queremos ir de vacaciones;Si queremos ir de vacaciones, tendremos que comenzar a ahorrar.;
+Perífrasis verbal;Me gustaría poder viajar más a menudo;Quisiera tener la oportunidad de viajar más seguido.;
+Perífrasis verbal;Me gusta escuchar música mientras estudio;Prefiero estudiar en silencio para concentrarme mejor;
+Perífrasis verbal;Necesito que me expliques cómo funciona el nuevo sistema;Puedo averiguar cómo funciona el nuevo sistema por mi cuenta;
+Perífrasis verbal;Estoy pensando en viajar al extranjero este verano;No tengo planes de viajar en el futuro cercano;
+Perífrasis verbal;Debes tener cuidado al cruzar la calle;Sería bueno que siempre camines con precaución en la calle;
+Perífrasis verbal;Voy a ir al cine esta noche con mis amigos;No tengo planes para esta noche;
