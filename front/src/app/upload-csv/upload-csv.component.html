@@ -1,32 +1,38 @@
-<label for="file-upload" class="custom-file-upload">
+<div *ngIf="!results.length">
+  <label for="file-upload" class="custom-file-upload">
     Seleccionar archivo CSV
-</label>
-<input id="file-upload" type="file" accept=".csv" (change)="onFileSelected($event)" />
-<div>
-    <input type="file" (change)="onFileSelected($event)" />
-    <button (click)="onSubmit()">Calcular similitudes</button>
+  </label>
+
+  <input
+    id="file-upload"
+    type="file"
+    accept=".csv"
+    (change)="onFileSelected($event)"
+  />
+  <button (click)="onSubmit()">Calcular similitudes</button>
 </div>
 
-<div *ngIf="results">
-    <table>
-        <thead>
-            <tr>
-                <th>Frase Original</th>
-                <th>Frase Adaptada</th>
-                <th>Similitudes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let result of results">
-                <td>{{ result.frase_original }}</td>
-                <td>{{ result.frase_adaptada }}</td>
-                <td>
-                    <ul>
-                        <li *ngFor="let similarity of result.similitudes">{{ similarity | number: '1.2-2' }}</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
+<div *ngIf="results.length">
+  <table>
+    <thead>
+      <tr>
+        <th>Frase Original</th>
+        <th>Frase Adaptada</th>
+        <th>Similitudes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.frase_original }}</td>
+        <td>{{ result.frase_adaptada }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let similarity of result.similitudes">
+              {{ similarity | number : "1.2-2" }}
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

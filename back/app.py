@@ -21,14 +21,19 @@ for model_name in model_names:
     similarity_pipeline = pipeline("text-classification", model=model, tokenizer=tokenizer)
     models.append(similarity_pipeline)
 
+def load_csv_data(file_path):
+    data = pd.read_csv(file_path, sep=";", header=None, skiprows=1)
+    data.columns = ["tipo_frase_original", "frase_original", "frase_adaptada", "semanticamente_similares"]
+    return data
+
+
 @app.route("/similarity", methods=['POST'])
 def get_similarity():
     if 'file' not in request.files:
         return "No file found", 400
 
     file = request.files['file']
-    csv_data = pd.read_csv(file, sep=";", header=None)
-    csv_data.columns = ["tipo_frase_original", "frase_original", "frase_adaptada", "semanticamente_similares"]
+    csv_data = load_csv_data(file)
 
     similarities = []
     for index, row in csv_data.iterrows():
