@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { SimilarityService } from '../similarity.service';
+import { SimilarityService } from '../service/similarity.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ResultsService } from '../results.service';
+import { ResultsService } from '../service/results.service';
 
 @Component({
   selector: 'app-results',
