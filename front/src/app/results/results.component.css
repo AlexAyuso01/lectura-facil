@@ -7,6 +7,7 @@
 }
 .container {
   position: relative;
+  padding: 0 50px;
 }
 
 .header {
@@ -61,4 +62,58 @@ table thead {
 
 table tbody tr:nth-child(even) {
   background-color: #f8f8f8;
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+  
+  .back-button {
+    margin-right: 0;
+    margin-bottom: 15px;
+    position: static;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  table th,
+  table td {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  table th,
+  table td {
+    padding: 0.75rem;
+  }
+}
+
+
+.footer {
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 20px 0;
+}
+
+.footer-content {
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
 }

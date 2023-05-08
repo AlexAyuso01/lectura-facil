@@ -54,10 +54,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
-  padding: 16px;
+  padding: 0 30px 30px 30px;
+  flex-grow: 1;
 }
 
 .model-list {
@@ -158,4 +158,75 @@ td {
 
 tr:hover {
   background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .logo-upm {
+    width: 200px;
+  }
+
+  .logo-etsiinf {
+    width: 80px;
+  }
+
+  .title {
+    position: static;
+    transform: none;
+    margin-bottom: 20px;
+  }
+
+  .intro h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-container {
+    padding: 30px;
+  }
+
+  .logo-upm {
+    width: 225px;
+  }
+
+  .logo-etsiinf {
+    width: 100px;
+  }
+
+  .intro h1 {
+    font-size: 1.75rem;
+  }
+
+  .intro p {
+    font-size: 0.95rem;
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 20px 0;
+}
+
+.footer-content {
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
 }

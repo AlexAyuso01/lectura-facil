@@ -1,15 +1,14 @@
 <div class="container">
-  <div class="initial-page">
-    <div class="header-container">
-      <img class="logo-upm" src="assets/logos/UPM.png" alt="Logo Universidad" />
-      <h1 class="title">Calculadora de Similitud de Texto</h1>
-      <img
-        class="logo-etsiinf"
-        src="assets/logos/ETSIINF.jpeg"
-        alt="Logo Facultad"
-      />
-    </div>
-
+  <div class="header-container">
+    <img class="logo-upm" src="assets/logos/UPM.png" alt="Logo Universidad" />
+    <h1 class="title">Calculadora de Similitud de Texto</h1>
+    <img
+      class="logo-etsiinf"
+      src="assets/logos/ETSIINF.jpeg"
+      alt="Logo Facultad"
+    />
+  </div>
+  <body>
     <div class="intro">
       <p>
         Bienvenido a la Calculadora de Similitud de Texto. Esta aplicación te
@@ -89,5 +88,16 @@
     </button>
     <p *ngIf="isLoading">Calculando similitudes...</p>
     <div *ngIf="isLoading" class="spinner"></div>
-  </div>
+  </body>
 </div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>Jesús Vivo Castro</p>
+    <p>ETSIINF - Universidad Politécnica de Madrid</p>
+    <p>Trabajo de Fin de Grado - Lectura Fácil - 2023</p>
+    <p>
+      Contacto: <a href="mailto:j.vivo@alumnos.upm.es">j.vivo@alumnos.upm.es</a>
+    </p>
+  </div>
+</footer>

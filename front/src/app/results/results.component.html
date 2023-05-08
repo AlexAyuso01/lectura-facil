@@ -13,8 +13,10 @@
       </li>
     </ul>
     <p>
-      En la columna de Similitudes, 1.0 significa semánticamente similares y 0.0
-      significa no semánticamente similares.
+      En la columna de Similitudes, las puntuaciones varían entre 0.0 y 1.0,
+      donde 1.0 indica que las frases son semánticamente muy similares y 0.0
+      indica que no son semánticamente similares. Las puntuaciones intermedias
+      representan diferentes grados de similitud semántica.
     </p>
   </div>
   <table>
@@ -31,10 +33,18 @@
         <td>{{ result.frase_adaptada }}</td>
         <td>
           <p *ngFor="let similarity of result.similitudes; let i = index">
-            Modelo {{ i + 1 }}: {{ similarity | number: "1.3-3"}}
+            Modelo {{ i + 1 }}: {{ similarity | number : "1.3-3" }}
           </p>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+<footer class="footer">
+  <div class="footer-content">
+    <p>Jesús Vivo Castro</p>
+    <p>ETSIINF - Universidad Politécnica de Madrid</p>
+    <p>Trabajo de Fin de Grado - Lectura Fácil - 2023</p>
+    <p>Contacto: <a href="mailto:j.vivo@alumnos.upm.es">j.vivo@alumnos.upm.es</a></p>
+  </div>
+</footer>  
