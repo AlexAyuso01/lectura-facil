@@ -1,7 +1,6 @@
-import re
 import pandas as pd
 from flask import Flask, jsonify, request
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+from sentence_transformers import SentenceTransformer, util
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -16,16 +15,13 @@ model_names = [
 
 models = []
 for model_name in model_names:
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSequenceClassification.from_pretrained(model_name)
-    similarity_pipeline = pipeline("text-classification", model=model, tokenizer=tokenizer)
-    models.append(similarity_pipeline)
+    model = SentenceTransformer(model_name)
+    models.append(model)
 
 def load_csv_data(file_path):
     data = pd.read_csv(file_path, sep=";", header=None, skiprows=1)
     data.columns = ["tipo_frase_original", "frase_original", "frase_adaptada", "semanticamente_similares"]
     return data
-
 
 @app.route("/similarity", methods=['POST'])
 def get_similarity():
@@ -42,9 +38,11 @@ def get_similarity():
 
         model_results = []
         for model in models:
-            result = model([{"text": original_sentence, "text_pair": adapted_sentence}])
-            similarity_score = float(re.findall(r'\d+\.?\d*', result[0]["label"])[0])
-            model_results.append(float(similarity_score))
+            original_embedding = model.encode(original_sentence, convert_to_tensor=True)
+            adapted_embedding = model.encode(adapted_sentence, convert_to_tensor=True)
+            similarity_score = util.pytorch_cos_sim(original_embedding, adapted_embedding).item()
+            rounded_similarity_score = round(similarity_score, 3)
+            model_results.append(float(rounded_similarity_score))
 
         similarities.append({
             "frase_original": original_sentence,
@@ -56,3 +54,4 @@ def get_similarity():
 
 if __name__ == "__main__":
     app.run()
+
