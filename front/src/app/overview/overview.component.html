@@ -9,85 +9,104 @@
     />
   </div>
   <body>
-    <div class="intro">
-      <p>
-        Bienvenido a la Calculadora de Similitud de Texto. Esta aplicación te
-        permite cargar archivos CSV que contienen pares de frases y calcular la
-        similitud semántica entre ellas utilizando diferentes modelos de
-        lenguaje. Los modelos de lenguaje utilizados en esta aplicación son de
-        última generación y proporcionan resultados precisos en la medición de
-        la similitud semántica entre las frases.
-      </p>
-      <p>
-        El archivo CSV debe tener un formato específico para funcionar
-        correctamente con esta aplicación. Debe contener cuatro columnas
-        separadas por punto y coma (;): tipo_frase_original, frase_original,
-        frase_adaptada y semanticamente_similares. La aplicación procesará el
-        archivo y calculará las similitudes semánticas entre las frases
-        originales y adaptadas en cada fila.
-      </p>
-      <p>
-        Los modelos de lenguaje utilizados en esta aplicación son los
-        siguientes:
-      </p>
-      <ul>
-        <li>
-          <a
-            href="https://huggingface.co/Maite89/Roberta_finetuning_semantic_similarity_stsb_multi_mt"
-            target="_blank"
-            >Maite89/Roberta_finetuning_semantic_similarity_stsb_multi_mt</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://huggingface.co/symanto/sn-xlm-roberta-base-snli-mnli-anli-xnli"
-            target="_blank"
-            >symanto/sn-xlm-roberta-base-snli-mnli-anli-xnli</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://huggingface.co/hiiamsid/sentence_similarity_spanish_es"
-            target="_blank"
-            >hiiamsid/sentence_similarity_spanish_es</a
-          >
-        </li>
-      </ul>
-      <p>
-        Para utilizar la aplicación, simplemente carga un archivo CSV con el
-        formato adecuado y presiona el botón "Calcular similitudes". La
-        aplicación procesará el archivo y calculará las similitudes utilizando
-        múltiples modelos de lenguaje. Los resultados se mostrarán en una tabla,
-        donde podrás ver las puntuaciones de similitud para cada par de frases y
-        comparar los resultados de los diferentes modelos.
-      </p>
-      <p>
-        Esta herramienta es ideal para investigadores, lingüistas, profesionales
-        de procesamiento del lenguaje natural y cualquier persona interesada en
-        explorar la similitud semántica entre fragmentos de texto.
-      </p>
-    </div>
+    <p class="section-text">
+      ¡Bienvenido a la Calculadora de Similitud de Texto! Esta aplicación te
+      permite cargar archivos CSV que contienen pares de frases y calcular la
+      similitud semántica entre ellas utilizando diferentes modelos de lenguaje.
+    </p>
+    <div class="row">
+      <div class="column">
+        <h2 class="section-title">Formato del archivo CSV</h2>
+        <p class="section-text">
+          El archivo CSV debe tener un formato específico para funcionar
+          correctamente con esta aplicación. Debe contener cuatro columnas
+          separadas por punto y coma (;): tipo_frase_original, frase_original,
+          frase_adaptada y semanticamente_similares. Por ejemplo:
+        </p>
+        <img
+          class="csv-format-image"
+          src="assets/csv-format.png"
+          alt="Formato del archivo CSV"
+        />
 
-    <div class="input-container">
-      <label for="file-upload" class="custom-file-upload">
-        Seleccionar archivo CSV
-      </label>
+        <h2 class="section-title">Modelos de similitud semántica usados</h2>
+        <p class="section-text">
+          Los modelos de lenguaje utilizados en esta aplicación son los
+          siguientes:
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://huggingface.co/Maite89/Roberta_finetuning_semantic_similarity_stsb_multi_mt"
+              target="_blank"
+              >Maite89/Roberta_finetuning_semantic_similarity_stsb_multi_mt</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://huggingface.co/symanto/sn-xlm-roberta-base-snli-mnli-anli-xnli"
+              target="_blank"
+              >symanto/sn-xlm-roberta-base-snli-mnli-anli-xnli</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://huggingface.co/hiiamsid/sentence_similarity_spanish_es"
+              target="_blank"
+              >hiiamsid/sentence_similarity_spanish_es</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <h2 class="section-title">Cómo usar la aplicación</h2>
+        <ol class="section-text">
+          <li>
+            Carga un archivo CSV. Asegúrate de que esté en el formato adecuado,
+            mencionado anteriormente.
+          </li>
+          <li>
+            Una vez cargado el archivo, presiona el botón "Calcular
+            similitudes".
+          </li>
+          <li>
+            La aplicación comenzará a procesar el archivo y a calcular las
+            similitudes utilizando múltiples modelos de lenguaje. Este proceso
+            puede tardar un poco, dependiendo del tamaño del archivo y del
+            número de pares de frases.
+          </li>
+          <li>
+            Una vez finalizado el cálculo, los resultados se mostrarán en una
+            tabla. En ella, podrás ver las puntuaciones de similitud para cada
+            par de frases.
+          </li>
+          <li>
+            Compara los resultados de los diferentes modelos para obtener una
+            visión completa de la similitud semántica entre las frases.
+          </li>
+        </ol>
+        <div class="input-container">
+          <label for="file-upload" class="custom-file-upload">
+            Seleccionar archivo CSV
+          </label>
 
-      <input
-        id="file-upload"
-        type="file"
-        accept=".csv"
-        (change)="onFileSelected($event)"
-      />
-      <span *ngIf="file" class="file-name"
-        >Archivo seleccionado: {{ file.name }}</span
-      >
+          <input
+            id="file-upload"
+            type="file"
+            accept=".csv"
+            (change)="onFileSelected($event)"
+          />
+          <span *ngIf="file" class="file-name"
+            >Archivo seleccionado: {{ file.name }}</span
+          >
+        </div>
+        <button class="calculate-button" (click)="onSubmit()">
+          Calcular similitudes
+        </button>
+        <p *ngIf="isLoading">Calculando similitudes...</p>
+        <div *ngIf="isLoading" class="spinner"></div>
+      </div>
     </div>
-    <button class="calculate-button" (click)="onSubmit()">
-      Calcular similitudes
-    </button>
-    <p *ngIf="isLoading">Calculando similitudes...</p>
-    <div *ngIf="isLoading" class="spinner"></div>
   </body>
 </div>
 
