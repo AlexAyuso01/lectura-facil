@@ -9,6 +9,7 @@ export class ResultsService {
   results$ = this.resultsSource.asObservable();
 
   setResults(results: any) {
+    console.log('Setting results:', results)
     this.resultsSource.next(results);
   }
 

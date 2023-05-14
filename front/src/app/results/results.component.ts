@@ -12,6 +12,7 @@ import { ResultsService } from '../service/results.service';
 export class ResultsComponent {
   modelNames: any[] = [];
   results: any[] = [];
+  accuracies: number[] = [];
   private resultsSubscription: Subscription;
 
   constructor(
@@ -24,6 +25,7 @@ export class ResultsComponent {
       .getResults()
       .subscribe((results) => {
         this.results = results;
+        this.accuracies = this.similarityService.calculateAccuracy(results);
       });
 
     if (!this.results || this.results.length === 0) {

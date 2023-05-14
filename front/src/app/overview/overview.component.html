@@ -85,26 +85,20 @@
             visión completa de la similitud semántica entre las frases.
           </li>
         </ol>
-        <div class="input-container">
-          <label for="file-upload" class="custom-file-upload">
-            Seleccionar archivo CSV
-          </label>
-
+        <div class="input-container">        
           <input
             id="file-upload"
             type="file"
             accept=".csv"
             (change)="onFileSelected($event)"
           />
-          <span *ngIf="file" class="file-name"
-            >Archivo seleccionado: {{ file.name }}</span
-          >
-        </div>
+        </div>       
         <button class="calculate-button" (click)="onSubmit()">
           Calcular similitudes
         </button>
-        <p *ngIf="isLoading">Calculando similitudes...</p>
-        <div *ngIf="isLoading" class="spinner"></div>
+        <div class="loading-container">
+          <div class="spinner" [hidden]="!isLoading"></div>
+        </div>
       </div>
     </div>
   </body>

@@ -21,4 +21,23 @@ export class SimilarityService {
 
     return this.http.post(this.apiUrl, formData);
   }
+
+  calculateAccuracy(results: any[]): number[] {
+    let totalPredictions = results.length;
+    let correctPredictions = Array(this.modelNames.length).fill(0);
+  
+    for (let i = 0; i < totalPredictions; i++) {
+      let trueLabel = results[i]["etiqueta_real"];
+      let predictions = results[i]["predicciones"];
+      for (let j = 0; j < predictions.length; j++) {
+        if (predictions[j] == trueLabel) {
+          correctPredictions[j]++;
+        }
+      }
+    }
+  
+    let accuracies = correctPredictions.map(x => x / totalPredictions);
+    return accuracies;
+  }
+  
 }

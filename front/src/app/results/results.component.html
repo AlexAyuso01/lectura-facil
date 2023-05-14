@@ -3,15 +3,15 @@
     <button class="back-button" (click)="goToHomePage()">
       Regresar a la página principal
     </button>
-    <h2>Resumen de Similitudes</h2>
+    <h2>Resultados</h2>
   </div>
   <div class="model-list">
-    <h3>Modelos:</h3>
-    <ul>
-      <li *ngFor="let model of modelNames; let i = index">
-        Modelo {{ i + 1 }}: {{ model }}
-      </li>
-    </ul>
+    <h3>Modelos usados:</h3>
+    <div *ngFor="let modelName of modelNames; let i = index">
+      <h5>Modelo {{ i + 1 }}: {{ modelName }}</h5>
+      <p>Precisión: {{ accuracies[i] }}</p>
+    </div>
+    <h3>Resumen de similitudes</h3>
     <p>
       En la columna de Similitudes, las puntuaciones varían entre -1.0 y 1.0,
       donde 1.0 indica que las frases son semánticamente muy similares y -1.0
@@ -45,6 +45,8 @@
     <p>Jesús Vivo Castro</p>
     <p>ETSIINF - Universidad Politécnica de Madrid</p>
     <p>Trabajo de Fin de Grado - Lectura Fácil - 2023</p>
-    <p>Contacto: <a href="mailto:j.vivo@alumnos.upm.es">j.vivo@alumnos.upm.es</a></p>
+    <p>
+      Contacto: <a href="mailto:j.vivo@alumnos.upm.es">j.vivo@alumnos.upm.es</a>
+    </p>
   </div>
-</footer>  
+</footer>

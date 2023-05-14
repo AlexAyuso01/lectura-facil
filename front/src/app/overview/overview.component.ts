@@ -43,7 +43,9 @@ export class OverviewComponent {
         this.results = response;
         this.isLoading = false;
         this.resultsService.setResults(this.results);
+        console.log('Redirecting to /results')
         this.router.navigate(['/results']);
+        console.log(response)
       },
       (error) => {
         console.error('Error al calcular las similitudes: ', error);
