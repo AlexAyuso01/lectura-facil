@@ -3,21 +3,44 @@
     <button class="back-button" (click)="goToHomePage()">
       Regresar a la página principal
     </button>
-    <h2>Resultados</h2>
+    <h1>Resultados</h1>
   </div>
-  <div class="model-list">
-    <h3>Modelos usados:</h3>
-    <div *ngFor="let modelName of modelNames; let i = index">
-      <h5>Modelo {{ i + 1 }}: {{ modelName }}</h5>
-      <p>Precisión: {{ accuracies[i] }}</p>
+  <div class="row">
+    <div class="column">
+      <h3>Descripción de la evaluación de los modelos</h3>
+      <p>
+        Cada modelo en esta aplicación analiza pares de frases para determinar
+        su similitud semántica. Las frases se convierten en representaciones
+        numéricas como vectores. Luego, se calcula la similitud entre estos
+        vectores utilizando la similitud del coseno, que varía de 0 a 1 tras
+        convertir los valores negativos en cero.
+      </p>
+      <p>
+        Cada modelo predice si las frases son semánticamente similares usando un
+        umbral de 0.5. Si la similitud del coseno es mayor que 0.5, las frases
+        se consideran similares (valor de 1). Si es 0.5 o menos, se consideran
+        no similares (valor de 0).
+      </p>
+      <p>
+        La precisión de un modelo se obtiene comparando las predicciones con las
+        etiquetas reales del conjunto de datos. Si la etiqueta real es 'SI' (las
+        frases son similares), se toma como 1; si es 'NO' (las frases no son
+        similares), se toma como 0.
+      </p>
+      <p>
+        La precisión del modelo es el porcentaje de predicciones correctas, y se
+        muestra junto a cada modelo en la sección 'Modelos usados'."
+      </p>
     </div>
-    <h3>Resumen de similitudes</h3>
-    <p>
-      En la columna de Similitudes, las puntuaciones varían entre -1.0 y 1.0,
-      donde 1.0 indica que las frases son semánticamente muy similares y -1.0
-      indica que no son semánticamente similares. Las puntuaciones intermedias
-      representan diferentes grados de similitud semántica.
-    </p>
+    <div class="column">
+      <h3>Evaluación de los modelos usados:</h3>
+      <div class="model-list">
+        <div *ngFor="let modelName of modelNames; let i = index">
+          <h5>Modelo {{ i + 1 }}: {{ modelName }}</h5>
+          <p>Precisión: {{ accuracies[i] }}</p>
+        </div>
+      </div>
+    </div>
   </div>
   <table>
     <thead>

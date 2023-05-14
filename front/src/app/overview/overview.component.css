@@ -1,18 +1,25 @@
-body, h1, h2, p, ul, li, ol, div {
+body,
+h1,
+h2,
+p,
+ul,
+li,
+ol,
+div {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.6;
   color: #333;
   padding: 20px;
 }
 
 .container {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   max-width: 1200px;
   margin: auto;
 }
@@ -24,7 +31,8 @@ body {
   margin-bottom: 20px;
 }
 
-.logo-upm, .logo-etsiinf {
+.logo-upm,
+.logo-etsiinf {
   height: 80px;
 }
 
@@ -75,7 +83,7 @@ ul li {
 
 .column {
   flex: 1;
-  padding: 20px; 
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,7 +151,7 @@ ul li {
   text-align: center;
   padding: 20px;
   background-color: #f3f3f3;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-top: -50px;
 }
 
@@ -166,7 +174,7 @@ input {
   border-radius: 15px;
   color: #fff;
   cursor: pointer;
-  transition: background .2s ease-in-out;
+  transition: background 0.2s ease-in-out;
   margin: auto;
 }
 

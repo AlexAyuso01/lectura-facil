@@ -46,9 +46,7 @@ def get_similarity():
             original_embedding = model.encode(original_sentence, convert_to_tensor=True)
             adapted_embedding = model.encode(adapted_sentence, convert_to_tensor=True)
             similarity_score = util.pytorch_cos_sim(original_embedding, adapted_embedding).item()
-
-            if math.isnan(similarity_score):
-                similarity_score = 0.0
+            similarity_score = max(0, similarity_score)
 
             rounded_similarity_score = round(similarity_score, 3)
             model_results.append(float(rounded_similarity_score))
