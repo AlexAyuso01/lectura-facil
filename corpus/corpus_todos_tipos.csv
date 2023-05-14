@@ -1,0 +1,104 @@
+tipo_frase_original;frase_original;frase_adaptada;semanticamente_similares
+Pasiva;El libro fue escrito por mi amigo.;Mi amigo escribió el libro.;SI
+Pasiva;El libro fue escrito por mi amigo.;El artículo fue escrito por el periodista.;NO
+Pasiva;El libro fue escrito por Juan Gómez.;Juan Gómez escribió el libro.;SI
+Pasiva;El libro fue escrito por Juan Gómez.;El artículo fue escrito por Juan Gómez.;NO
+Pasiva;La casa fue construida en 1905 por mi bisabuelo;Mi bisabuelo construyó la casa en 1905;SI
+Pasiva;La comida fue preparada por el chef famoso;El chef famoso preparó la comida;SI
+Pasiva;El coche fue vendido por el concesionario;El concesionario vendió el coche;SI
+Pasiva;La película fue dirigida por el famoso cineasta;La película fue dirigida por el famoso cineasta;SI
+Pasiva;El jardín fue regado por el jardinero;La dueña del jardín regó sus plantas y flores;NO
+Pasiva;El cuadro fue pintado por el artista famoso;El cuadro fue vendido en una subasta a un precio elevado;NO
+Pasiva;Los billetes de avión fueron comprados por internet;Los billetes de avión fueron comprados en una agencia de viajes;NO
+Pasiva;La carta fue enviada por correo postal;La carta nunca llegó a su destino;NO
+Pasiva;El libro fue escrito por el autor más vendido de la editorial;La editorial publicó el libro más vendido del autor;SI
+Pasiva;El pastel fue horneado por mi abuela.;Mi abuela horneó el pastel.;SI
+Pasiva;El pastel fue horneado por mi abuela.;El pastel fue comido por mi hermano.;NO
+Pasiva;La mesa fue hecha por el carpintero.;El carpintero hizo la mesa.;SI
+Pasiva;La mesa fue hecha por el carpintero.;La silla fue hecha por el carpintero.;NO
+Pasiva;La música fue compuesta por el músico famoso.;El músico famoso compuso la música.;SI
+Pasiva;La música fue compuesta por el músico famoso.;La música fue interpretada por la orquesta.;NO
+Pasiva;El jarrón fue roto por el gato.;El gato rompió el jarrón.;SI
+Pasiva;El jarrón fue roto por el gato.;El jarrón fue pegado por mi madre.;NO
+Pasiva;La prueba fue corregida por el profesor.;El profesor corrigió la prueba.;SI
+Pasiva;La prueba fue corregida por el profesor.;La prueba fue suspendida por la mayoría de los estudiantes.;NO
+Pasiva;La conferencia fue dada por el experto.;El experto dio la conferencia.;SI
+Pasiva;La conferencia fue dada por el experto.;La conferencia fue asistida por muchos estudiantes.;NO
+Pasiva;El mural fue pintado por el artista.;El artista pintó el mural.;SI
+Pasiva;El mural fue pintado por el artista.;El mural fue admirado por los visitantes.;NO
+Perífrasis verbal;Tengo que ir al supermercado después del trabajo;Después del trabajo, debo ir al supermercado;SI
+Perífrasis verbal;Estoy pensando en comprar un coche nuevo;Estoy considerando comprar un coche nuevo;SI
+Perífrasis verbal;Él acaba de salir de la universidad y está buscando trabajo; Él está en búsqueda de trabajo después de salir de la universidad;SI
+Perífrasis verbal;Vamos a tener que empezar a ahorrar si queremos ir de vacaciones;Si queremos ir de vacaciones, tendremos que comenzar a ahorrar;SI
+Perífrasis verbal;Me gustaría poder viajar más a menudo;Quisiera tener la oportunidad de viajar más seguido;SI
+Perífrasis verbal;Voy a ir al cine esta noche con mis amigos;No tengo planes para esta noche;NO
+Perífrasis verbal;Tiene que hacer la tarea antes de cenar.;Antes de cenar, debe hacer la tarea.;SI
+Perífrasis verbal;Estoy deseando ver la nueva película.;Tengo ganas de ver la nueva película.;SI
+Perífrasis verbal;Está por llover, lleva el paraguas.;Lleva el paraguas, se va a llover.;SI
+Perífrasis verbal;Quiero ir a la playa este fin de semana.;Me gustaría ir a la playa este fin de semana.;SI
+Perífrasis verbal;Estoy pensando en adoptar un perro.;Estoy considerando adoptar un perro.;SI
+Perífrasis verbal;Deberíamos empezar a estudiar para el examen.;Tenemos que estudiar para el examen.;SI
+Perífrasis verbal;Vamos a tener que levantarnos temprano para el viaje.;Para el viaje, tendremos que despertar temprano.;SI
+Perífrasis verbal;Estoy planeando hacer una fiesta sorpresa para mi mejor amigo.;Estoy organizando una fiesta sorpresa para mi mejor amigo.;SI
+Perífrasis verbal;Debes apurarte si no quieres llegar tarde.;Si no quieres llegar tarde, necesitas apresurarte.;SI
+Perífrasis verbal;Estoy considerando comprar un nuevo teléfono.;Estoy pensando en comprar un teléfono nuevo.;SI
+Perífrasis verbal;Estoy deseando ver la nueva película.;Voy a ver una serie en casa.;NO
+Perífrasis verbal;Quiero ir a la playa este fin de semana.;Voy a visitar a mi abuela este fin de semana.;NO
+Perífrasis verbal;Estoy pensando en adoptar un perro.;Voy a comprar un gato.;NO
+Perífrasis verbal;Deberíamos empezar a estudiar para el examen.;Vamos a jugar videojuegos toda la noche.;NO
+Perífrasis verbal;Estoy planeando hacer una fiesta sorpresa para mi mejor amigo.;Estoy planeando un viaje a la montaña.;NO
+Yuxtaposición;"Pedro es muy estudioso; siempre saca las mejores notas";Pedro es muy estudioso. Por eso siempre saca las mejores notas.;SI
+Yuxtaposición;Lucía es muy amable, todos quieren ser su amigo;Lucía es muy amable. Por eso, todos quieren ser su amigo.;SI
+Yuxtaposición;"Fuimos al cine; había una buena película";Fuimos al cine porque había una buena película.;SI
+Yuxtaposición;Marta no vino a la reunión, estaba cansada;Marta no vino a la reunión porque estaba cansada.;SI
+Yuxtaposición;Los niños juegan en el parque, los adultos conversan en las bancas;Los niños juegan en el parque. Mientras tanto, los adultos conversan en las bancas.;SI
+Yuxtaposición;Ven a mi casa, tenemos que estudiar para el examen;Ven a mi casa para que podamos estudiar para el examen.;SI
+Yuxtaposición;Termina tus deberes, luego podrás jugar;Termina tus deberes. Después podrás jugar.;SI
+Yuxtaposición;Vamos en bicicleta, es un día precioso;Vamos en bicicleta porque es un día precioso.;SI
+Yuxtaposición;La lavadora no arranca, llamaré al técnico;La lavadora no arranca. Por eso, llamaré al técnico.;SI
+Yuxtaposición;El coche se averió, tuvimos que llamar a la grúa;El coche se averió. Por eso, tuvimos que llamar a la grúa.;SI
+Yuxtaposición;"Voy a la biblioteca; necesito un libro para la tarea";Voy a la biblioteca porque necesito un libro para la tarea.;SI
+Yuxtaposición;El fin de semana iré a visitarte, quédate en tu casa.;El fin de semana iré a visitarte. Por eso, quédate en tu casa.;SI
+Yuxtaposición;Josefina es una persona muy activa, todos la quieren en su equipo.;Josefina es una persona muy activa. Por eso, todos la quieren en su equipo.;SI
+Yuxtaposición;"Fui a la casa de Mariana; me había invitado el domingo.";Fui a la casa de Mariana. Mariana me había invitado el domingo.;SI
+Yuxtaposición;Andrea no fue a la clase, su hermana estaba enferma;Andrea no fue a la clase porque su hermana estaba enferma.;SI
+Yuxtaposición;Los pájaros pían desde los árboles, los gatos maúllan desde las ventanas.;Los pájaros pían desde los árboles. Y los gatos maúllan desde las ventanas.;SI
+Yuxtaposición;Ven conmigo, te enseñaré la biblioteca.;Ven conmigo y te enseñaré la biblioteca.;SI
+Yuxtaposición;Acaba la tarea, lo primero es lo primero.;Acaba la tarea porque lo primero es lo primero.;SI
+Yuxtaposición;Vamos a pie, tengo que hacer ejercicio.;Vamos a pie porque tengo que hacer ejercicio.;SI
+Yuxtaposición;La moto no funciona, llama a un técnico.;La moto no funciona. Por eso, llama a un técnico.;SI
+Encadenamiento sintáctico;Juan compró una casa, la cual está ubicada en el centro de la ciudad, y la decoró con muebles modernos y coloridos;Juan compró una casa. La casa está ubicada en el centro de la ciudad. Juan decoró la casa con muebles modernos y coloridos.;SI
+Encadenamiento sintáctico;Los niños jugaron en el parque, corrieron por el pasto y se divirtieron en los columpios durante toda la tarde.;Los niños jugaron en el parque. Los niños corrieron por el pasto y los niños se divirtieron en los columpios durante toda la tarde.;SI
+Encadenamiento sintáctico;Aunque estaba cansado, el atleta siguió corriendo, saltando y sufriendo hasta que llegó a la meta.;Aunque el atleta estaba cansado, el atleta corrió, saltó y sufrió hasta que llegó a la meta.;SI
+Encadenamiento sintáctico;La novela, que había sido escrita por un autor premiado, contaba la historia de un personaje que se veía envuelto en situaciones complicadas que lo llevaban a cuestionar su propio destino que, al final, lo llevaba a un desenlace inesperado.;La novela había sido escrita por un autor premiado. La novela contaba la historia de un personaje que estaba envuelto en situaciones complicadas. Las situaciones complicadas llevaban al personaje a cuestionar su propio destino. Es destino, al final, llevaba al personaje a un final inesperado.;SI
+Encadenamiento sintáctico;Después de que terminó el partido, los jugadores se reunieron en el vestuario, donde celebraron su victoria, compartieron anécdotas de la temporada y planearon la estrategia para el próximo partido.;Cuando terminó el partido, los jugadores se reunieron en el vestuario, donde celebraron su victoria. Los jugadores compartieron anécdotas de la temporada y planearon la estrategia para el próximo partido.;SI
+Encadenamiento sintáctico;Toco tu boca, con un dedo toco el borde de tu boca, voy dibujándola como si saliera de mi mano, como si por primera vez tu boca se entreabriera, y me basta cerrar los ojos para deshacerlo todo y recomenzar, hago nacer cada vez la boca que deseo, la boca que mi mano elige y te dibuja en la cara, una boca elegida entre todas, con soberana libertad, elegida por mí para dibujarla con mi mano en tu cara, y que por un azar que no busco comprender coincide exactamente con tu boca que sonríe por debajo de la que mi mano te dibuja.;Toco el borde de tu boca con un dedo. Dibujo tu boca como si saliera de mi mano. Dibujo tu boca como si se abriera por primera vez. Cierro los ojos y deshago todo y comienzo otra vez. Hago nacer cada vez la boca que deseo. Hago nacer la boca que mi mano elige y te dibuja en la cara. He elegido la boca entre todas las bocas. La boca tiene soberana libertad. La boca se parece por azar con tu boca que sonríe por debajo de la boca que mi mano te dibuja.;SI
+Encadenamiento sintáctico;Su familia, sus amigos, sus compañeros de trabajo, pensaron que tan desmesurada necesidad se aplacaría con el tiempo, que su dependencia respondía a la ilusión de los primeros momentos, pero pasaron los días, las semanas, incluso varios meses, y ella seguía tan pendiente, tan incapaz de dar un paso sin su compañía que, en su propia casa, sus padres y sus hermanos comenzaron a hablar de obsesión.;Su familia, sus amigos, y sus compañeros de trabajo pensaron que esta gran necesidad por encontrar a su compañía se calmaría con el tiempo. Ellos pensaron que la dependencia de ella era por la ilusión de los primeros momentos. Pero pasaron los días, pasaron las semanas, incluso pasaron varios meses, y ella estaba pendiente de encontrar su compañía. Ella era incapaz de dar un paso sin su compañía. En su propia casa, sus padres y sus hermanos hablaban de obsesión.;SI
+Encadenamiento sintáctico;Y al fin vio lo que anhelaba: la mujer le saludó con un movimiento de la mano que apareció un instante a la altura de la boca sonriente, y entonces él siguió al coche, andando muy deprisa, yendo detrás por calles y plazas, sin perder de vista su caja bamboleante que se ocultaba al doblar una esquina y reaparecía al cruzar un puente.;Y al fin vio lo que quería, porque la mujer le saludó con un movimiento de la mano que apareció un instante a la altura de la boca sonriente. Entonces el estudiante siguió al coche. El estudiante andaba muy deprisa. El estudiante iba detrás por calles y plazas, sin perder de vista su caja bamboleante que se ocultaba al doblar una esquina y aparecía otra vez al cruzar un puente.;SI
+Encadenamiento sintáctico;Luego vuelvo a quererte, cuando nos acostamos y siento que estás hecha para mí, que de algún modo me lo dicen tu rodilla y tu vientre, que mis manos me convencen de ello, y que no hay otro lugar en donde yo me venga, a donde yo vaya, mejor que tu cuerpo.;Luego yo te quiero otra vez, cuando tú y yo nos acostamos  y yo siento que estás hecha para mí. Yo siento que de algún modo me lo dicen tu rodilla y tu vientre. Yo siento que mis manos me convencen de que estás hecha para mí, y yo siento que no hay otro lugar en donde yo me venga, a donde yo vaya, que sea mejor que tu cuerpo. ;SI
+Encadenamiento sintáctico;María cocinó la cena, la cual consistía en una lasaña casera, y la sirvió con una ensalada fresca y un vino tinto.;María cocinó la cena. La cena consistía en una lasaña casera. María sirvió la cena con una ensalada fresca y un vino tinto.;SI
+Encadenamiento sintáctico;El perro, que era muy juguetón, corría por el jardín, saltaba sobre las hojas caídas, y ladraba a los pájaros.;El perro era muy juguetón. El perro corría por el jardín. El perro saltaba sobre las hojas caídas. El perro ladraba a los pájaros.;SI
+Encadenamiento sintáctico;El profesor explicó la teoría, la cual era muy compleja, a través de ejemplos prácticos, y todos los alumnos la entendieron.;El profesor explicó la teoría. La teoría era muy compleja. El profesor explicó la teoría a través de ejemplos prácticos. Todos los alumnos entendieron la teoría.;SI
+Encadenamiento sintáctico;Juan y María fueron al cine, vieron una película de acción, y después cenaron en un restaurante italiano.;Juan y María fueron al cine. Juan y María vieron una película de acción. Después de la película, Juan y María cenaron en un restaurante italiano.;SI
+Encadenamiento sintáctico;La ciudad, que era muy antigua, tenía muchas calles estrechas y empedradas, las cuales estaban llenas de tiendas y restaurantes.;La ciudad era muy antigua. La ciudad tenía muchas calles estrechas y empedradas. Las calles estaban llenas de tiendas y restaurantes.;SI
+Encadenamiento sintáctico;El jardín estaba lleno de flores, las cuales desprendían un aroma delicioso, y los pájaros cantaban en los árboles.;El jardín estaba lleno de flores. Las flores desprendían un aroma delicioso. Los pájaros cantaban en los árboles del jardín.;SI
+Encadenamiento sintáctico;El niño subió a la montaña, desde donde se veía todo el valle, y se quedó allí hasta que se puso el sol.;El niño subió a la montaña. Desde la montaña se veía todo el valle. El niño se quedó en la montaña hasta que se puso el sol.;SI
+Encadenamiento sintáctico;El libro, que había sido escrito por un autor desconocido, se convirtió en un bestseller, y todo el mundo hablaba de él.;El libro había sido escrito por un autor desconocido. El libro se convirtió en un bestseller. Todo el mundo hablaba del libro.;SI
+Encadenamiento sintáctico;El coche, que era muy viejo, empezó a hacer un ruido extraño, y tuvieron que llamar a un mecánico.;El coche era muy viejo. El coche empezó a hacer un ruido extraño. T;
+Acrónimo;La OMS ha emitido una nueva guía de salud.;La Organización Mundial de la Salud ha emitido una nueva guía de salud.;SI
+Acrónimo;La OTAN celebró una reunión en Bruselas.;La Organización del Tratado del Atlántico Norte celebró una reunión en Bruselas.;SI
+Acrónimo;La OPEP acordó reducir la producción de petróleo.;La Organización de Países Exportadores de Petróleo acordó reducir la producción de petróleo.;SI
+Acrónimo;El FMI proporcionará un paquete de rescate.;El Fondo Monetario Internacional proporcionará un paquete de rescate.;SI
+Acrónimo;La OTAN celebró una reunión en Bruselas.;La Liga de Naciones celebró una reunión en Bruselas.;NO
+Acrónimo;El INE ha publicado los últimos datos de desempleo.;El Instituto Nacional de Estadística ha publicado los últimos datos de desempleo.;SI
+Acrónimo;La UCM ofrece una amplia gama de grados y posgrados.;La Universidad Complutense de Madrid ofrece una amplia gama de grados y posgrados.;SI
+Acrónimo;El CSIC lidera varios proyectos de investigación en España.;El Consejo Superior de Investigaciones Científicas lidera varios proyectos de investigación en España.;SI
+Acrónimo;La RAE ha aceptado nuevas palabras en el diccionario.;La Real Academia Española ha aceptado nuevas palabras en el diccionario.;SI
+Acrónimo;La CEOE ha emitido un comunicado respecto a la situación económica.;La Confederación Española de Organizaciones Empresariales ha emitido un comunicado respecto a la situación económica.;SI
+Acrónimo;La AEAT ha extendido el plazo para la presentación de impuestos.;La Agencia Estatal de Administración Tributaria ha extendido el plazo para la presentación de impuestos.;SI
+Acrónimo;El SEPE ha actualizado las cifras de paro.;El Servicio Público de Empleo Estatal ha actualizado las cifras de paro.;SI
+Acrónimo;La AEMET ha emitido una alerta de mal tiempo.;La Agencia Estatal de Meteorología ha emitido una alerta de mal tiempo.;SI
+Acrónimo;La UCM ofrece una amplia gama de grados y posgrados.;La Universidad Politécnica de Madrid ofrece una amplia gama de grados y posgrados.;NO
+Acrónimo;El CSIC lidera varios proyectos de investigación en España.;El Centro de Investigaciones Sociológicas lidera varios proyectos de investigación en España.;NO
+Acrónimo;La RAE ha aceptado nuevas palabras en el diccionario.;La Real Federación Española de Fútbol ha aceptado nuevas palabras en el diccionario.;NO
+Acrónimo;La AEAT ha extendido el plazo para la presentación de impuestos.;El Instituto Nacional de Administración Pública ha extendido el plazo para la presentación de impuestos.;NO

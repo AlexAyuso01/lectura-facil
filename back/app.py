@@ -50,7 +50,7 @@ def get_similarity():
 
             rounded_similarity_score = round(similarity_score, 3)
             model_results.append(float(rounded_similarity_score))
-            prediction = 1 if similarity_score > 0.5 else 0
+            prediction = 1 if similarity_score > 0.8 else 0
             predictions.append(prediction)
 
         similarities.append({
