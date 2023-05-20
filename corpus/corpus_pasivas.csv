@@ -1,0 +1,28 @@
+tipo_frase_original;frase_original;frase_adaptada;semanticamente_similares
+Pasiva;El libro fue escrito por mi amigo.;Mi amigo escribió el libro.;SI
+Pasiva;El libro fue escrito por mi amigo.;El artículo fue escrito por el periodista.;NO
+Pasiva;El libro fue escrito por Juan Gómez.;Juan Gómez escribió el libro.;SI
+Pasiva;El libro fue escrito por Juan Gómez.;El artículo fue escrito por Juan Gómez.;NO
+Pasiva;La casa fue construida en 1905 por mi bisabuelo;Mi bisabuelo construyó la casa en 1905;SI
+Pasiva;La comida fue preparada por el chef famoso;El chef famoso preparó la comida;SI
+Pasiva;El coche fue vendido por el concesionario;El concesionario vendió el coche;SI
+Pasiva;La película fue dirigida por el famoso cineasta;La película fue dirigida por el famoso cineasta;SI
+Pasiva;El jardín fue regado por el jardinero;La dueña del jardín regó sus plantas y flores;NO
+Pasiva;El cuadro fue pintado por el artista famoso;El cuadro fue vendido en una subasta a un precio elevado;NO
+Pasiva;Los billetes de avión fueron comprados por internet;Los billetes de avión fueron comprados en una agencia de viajes;NO
+Pasiva;La carta fue enviada por correo postal;La carta nunca llegó a su destino;NO
+Pasiva;El libro fue escrito por el autor más vendido de la editorial;La editorial publicó el libro más vendido del autor;SI
+Pasiva;El pastel fue horneado por mi abuela.;Mi abuela horneó el pastel.;SI
+Pasiva;El pastel fue horneado por mi abuela.;El pastel fue comido por mi hermano.;NO
+Pasiva;La mesa fue hecha por el carpintero.;El carpintero hizo la mesa.;SI
+Pasiva;La mesa fue hecha por el carpintero.;La silla fue hecha por el carpintero.;NO
+Pasiva;La música fue compuesta por el músico famoso.;El músico famoso compuso la música.;SI
+Pasiva;La música fue compuesta por el músico famoso.;La música fue interpretada por la orquesta.;NO
+Pasiva;El jarrón fue roto por el gato.;El gato rompió el jarrón.;SI
+Pasiva;El jarrón fue roto por el gato.;El jarrón fue pegado por mi madre.;NO
+Pasiva;La prueba fue corregida por el profesor.;El profesor corrigió la prueba.;SI
+Pasiva;La prueba fue corregida por el profesor.;La prueba fue suspendida por la mayoría de los estudiantes.;NO
+Pasiva;La conferencia fue dada por el experto.;El experto dio la conferencia.;SI
+Pasiva;La conferencia fue dada por el experto.;La conferencia fue asistida por muchos estudiantes.;NO
+Pasiva;El mural fue pintado por el artista.;El artista pintó el mural.;SI
+Pasiva;El mural fue pintado por el artista.;El mural fue admirado por los visitantes.;NO

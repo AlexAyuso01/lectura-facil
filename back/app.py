@@ -1,9 +1,7 @@
-import math
-
 import pandas as pd
 from flask import Flask, jsonify, request
-from sentence_transformers import SentenceTransformer, util
 from flask_cors import CORS
+from sentence_transformers import SentenceTransformer, util
 
 app = Flask(__name__)
 CORS(app)
@@ -22,7 +20,7 @@ for model_name in model_names:
 
 def load_csv_data(file_path):
     data = pd.read_csv(file_path, sep=";", header=None, skiprows=1)
-    data.columns = ["tipo_frase_original", "frase_original", "frase_adaptada", "semanticamente_similares"]
+    data.columns = ["frase_original", "frase_adaptada", "semanticamente_similares"]
     return data
 
 
