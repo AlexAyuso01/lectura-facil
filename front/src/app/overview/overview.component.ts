@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { SimilarityService } from '../service/similarity.service';
 import { Router } from '@angular/router';
 import { ResultsService } from '../service/results.service';
+import { ToastrService } from 'ngx-toastr';
+import { CustomToasterComponent } from '../custom-toaster/custom-toaster.component';
 
 @Component({
   selector: 'app-overview',
@@ -17,7 +19,8 @@ export class OverviewComponent {
   constructor(
     private similarityService: SimilarityService,
     private router: Router,
-    private resultsService: ResultsService
+    private resultsService: ResultsService,
+    private toastr: ToastrService
   ) {
     this.modelNames = similarityService.modelNames;
   }
@@ -43,13 +46,21 @@ export class OverviewComponent {
         this.results = response;
         this.isLoading = false;
         this.resultsService.setResults(this.results);
-        console.log('Redirecting to /results')
+        console.log('Redirecting to /results');
         this.router.navigate(['/results']);
-        console.log(response)
+        console.log(response);
       },
       (error) => {
         console.error('Error al calcular las similitudes: ', error);
         this.isLoading = false;
+        this.toastr.error(
+          'Se produjo un error al calcular las similitudes: el formato del CSV no es correcto',
+          'Error',
+          {
+            toastComponent: CustomToasterComponent,
+            timeOut: 10000
+          }
+        );
       }
     );
   }
