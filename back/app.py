@@ -23,8 +23,10 @@ for model_name in model_names:
 
 
 # Función que carga datos de un archivo CSV y los devuelve en un DataFrame de Pandas
-def load_csv_data(file_path):
-    data = pd.read_csv(file_path, sep=";", header=None, skiprows=1)
+def load_csv_data(file):
+    data = pd.read_csv(file, sep=";", header=None, skiprows=1)
+    if len(data.columns) != 3:
+        raise ValueError("Invalid CSV file")
     data.columns = ["frase_original", "frase_adaptada", "semanticamente_similares"]
     return data
 
@@ -38,7 +40,10 @@ def get_similarity():
 
     # Carga los datos del archivo CSV recibido en la solicitud
     file = request.files['file']
-    csv_data = load_csv_data(file)
+    try:
+        csv_data = load_csv_data(file)
+    except ValueError:
+        return "Invalid CSV file", 400
 
     # Itera cada fila de los datos
     similarities = []
