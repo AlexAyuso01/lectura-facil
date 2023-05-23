@@ -37,6 +37,7 @@ export class SimilarityService {
     }
   
     let accuracies = correctPredictions.map(x => x / totalPredictions);
+    
     return accuracies;
   }
   
