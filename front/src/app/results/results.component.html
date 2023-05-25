@@ -37,10 +37,13 @@
       <div class="model-list">
         <div *ngFor="let modelName of modelNames; let i = index">
           <h5>Modelo {{ i + 1 }}: {{ modelName }}</h5>
-          <p>Precisión: {{ accuracies[i] }}</p>
+          <p>Precisión (Accuracy): {{ metrics[i].accuracy | number:'1.2-2' }}</p>
+          <p>Precisión (Precision): {{ metrics[i].precision | number:'1.2-2' }}</p>
+          <p>Sensibilidad (Recall): {{ metrics[i].recall | number:'1.2-2' }}</p>
+          <p>F1-Score: {{ metrics[i].f1Score | number:'1.2-2' }}</p>
         </div>
       </div>
-    </div>
+    </div>    
   </div>
   <table>
     <thead>

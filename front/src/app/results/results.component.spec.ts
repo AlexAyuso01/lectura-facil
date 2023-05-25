@@ -14,15 +14,20 @@ describe('ResultsComponent', () => {
   beforeEach(async () => {
     mockSimilarityService = {
       modelNames: ['Model1', 'Model2'],
-      calculateAccuracy: jasmine.createSpy('calculateAccuracy').and.returnValue([90, 85])
+      calculateMetrics: jasmine.createSpy('calculateMetrics').and.returnValue([
+        { accuracy: 90, precision: 85, recall: 80, f1Score: 75 },
+        { accuracy: 70, precision: 65, recall: 60, f1Score: 55 },
+      ]),
     };
 
     const results = new BehaviorSubject<any[]>([]);
     mockResultsService = {
-      getResults: jasmine.createSpy('getResults').and.returnValue(results.asObservable()),
-      setResults: jasmine.createSpy('setResults').and.callFake(newResults => {
+      getResults: jasmine
+        .createSpy('getResults')
+        .and.returnValue(results.asObservable()),
+      setResults: jasmine.createSpy('setResults').and.callFake((newResults) => {
         results.next(newResults);
-      })
+      }),
     };
 
     await TestBed.configureTestingModule({
@@ -30,8 +35,8 @@ describe('ResultsComponent', () => {
       imports: [RouterTestingModule],
       providers: [
         { provide: SimilarityService, useValue: mockSimilarityService },
-        { provide: ResultsService, useValue: mockResultsService }
-      ]
+        { provide: ResultsService, useValue: mockResultsService },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ResultsComponent);
@@ -42,12 +47,13 @@ describe('ResultsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
+
   it('should update results when ResultsService emits new values', () => {
     const newResults = [{ id: 1 }, { id: 2 }];
     mockResultsService.setResults(newResults);
     expect(component.results).toEqual(newResults);
-    expect(mockSimilarityService.calculateAccuracy).toHaveBeenCalledWith(newResults);
+    expect(mockSimilarityService.calculateMetrics).toHaveBeenCalledWith(
+      newResults
+    );
   });
-  
 });

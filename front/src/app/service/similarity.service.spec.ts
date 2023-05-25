@@ -49,16 +49,25 @@ describe('SimilarityService', () => {
     expect(httpClientSpy.post.calls.count()).toBe(1, 'one call');
   });
 
-  it('should calculate accuracies correctly', () => {
+  it('should calculate metrics accurately', () => {
     const mockResults = [
-      { etiqueta_real: 1, predicciones: [1, 0, 0] },
-      { etiqueta_real: 0, predicciones: [0, 1, 0] },
-      { etiqueta_real: 1, predicciones: [1, 1, 1] },
+      { etiqueta_real: 'SI', predicciones: ['SI', 'NO', 'NO'] },
+      { etiqueta_real: 'NO', predicciones: ['NO', 'SI', 'NO'] },
+      { etiqueta_real: 'SI', predicciones: ['SI', 'SI', 'SI'] },
     ];
-    const expectedAccuracies = [1, 1/3, 2/3];
+    const expectedMetrics = [
+      { accuracy: 1, precision: 1, recall: 1, f1Score: 1 },
+      { accuracy: 1 / 3, precision: 0.5, recall: 0.5, f1Score: 0.5 },
+      { accuracy: 2 / 3, precision: 1, recall: 0.5, f1Score: 0.67 },
+    ];
 
-    const accuracies = service.calculateAccuracy(mockResults);
+    const metrics = service.calculateMetrics(mockResults);
 
-    expect(accuracies).toEqual(expectedAccuracies);
+    for (let i = 0; i < metrics.length; i++) {
+      expect(metrics[i].accuracy).toBeCloseTo(expectedMetrics[i].accuracy, 2);
+      expect(metrics[i].precision).toBeCloseTo(expectedMetrics[i].precision, 2);
+      expect(metrics[i].recall).toBeCloseTo(expectedMetrics[i].recall, 2);
+      expect(metrics[i].f1Score).toBeCloseTo(expectedMetrics[i].f1Score, 2);
+    }
   });
 });

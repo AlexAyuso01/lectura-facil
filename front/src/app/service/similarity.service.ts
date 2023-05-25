@@ -22,23 +22,58 @@ export class SimilarityService {
     return this.http.post(this.apiUrl, formData);
   }
 
-  calculateAccuracy(results: any[]): number[] {
+  calculateMetrics(results: any[]): any[] {
     let totalPredictions = results.length;
     let correctPredictions = Array(this.modelNames.length).fill(0);
-  
+    let truePositives = Array(this.modelNames.length).fill(0);
+    let trueNegatives = Array(this.modelNames.length).fill(0);
+    let falsePositives = Array(this.modelNames.length).fill(0);
+    let falseNegatives = Array(this.modelNames.length).fill(0);
+
     for (let i = 0; i < totalPredictions; i++) {
-      let trueLabel = results[i]["etiqueta_real"];
-      let predictions = results[i]["predicciones"];
+      let trueLabel = results[i]['etiqueta_real'];
+      let predictions = results[i]['predicciones'];
       for (let j = 0; j < predictions.length; j++) {
         if (predictions[j] == trueLabel) {
           correctPredictions[j]++;
+          if (trueLabel == 'SI') {
+            truePositives[j]++;
+          } else {
+            trueNegatives[j]++;
+          }
+        } else {
+          if (predictions[j] == 'SI') {
+            falsePositives[j]++;
+          } else {
+            falseNegatives[j]++;
+          }
         }
       }
     }
-  
-    let accuracies = correctPredictions.map(x => x / totalPredictions);
-    
-    return accuracies;
+
+    let metrics = [];
+    for (let j = 0; j < this.modelNames.length; j++) {
+      let accuracy = correctPredictions[j] / totalPredictions;
+      let precision =
+        truePositives[j] + falsePositives[j] > 0
+          ? truePositives[j] / (truePositives[j] + falsePositives[j])
+          : 0;
+      let recall =
+        truePositives[j] + falseNegatives[j] > 0
+          ? truePositives[j] / (truePositives[j] + falseNegatives[j])
+          : 0;
+      let f1Score =
+        precision + recall > 0
+          ? (2 * (precision * recall)) / (precision + recall)
+          : 0;
+      metrics.push({
+        accuracy: accuracy,
+        precision: precision,
+        recall: recall,
+        f1Score: f1Score,
+      });
+    }
+
+    return metrics;
   }
-  
 }
