@@ -36,13 +36,13 @@ export class SimilarityService {
       for (let j = 0; j < predictions.length; j++) {
         if (predictions[j] == trueLabel) {
           correctPredictions[j]++;
-          if (trueLabel == 'SI') {
+          if (trueLabel == 1) {
             truePositives[j]++;
           } else {
             trueNegatives[j]++;
           }
         } else {
-          if (predictions[j] == 'SI') {
+          if (predictions[j] == 1) {
             falsePositives[j]++;
           } else {
             falseNegatives[j]++;

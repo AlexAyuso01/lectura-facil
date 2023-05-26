@@ -8,42 +8,71 @@
   <div class="row">
     <div class="column">
       <h3>Descripción de la evaluación de los modelos</h3>
-      <p>
-        Cada modelo en esta aplicación analiza pares de frases para determinar
-        su similitud semántica. Las frases se convierten en representaciones
-        numéricas como vectores. Luego, se calcula la similitud entre estos
-        vectores utilizando la similitud del coseno, que varía de 0 a 1 tras
-        convertir los valores negativos en cero.
-      </p>
+      <br>
       <p>
         Cada modelo predice si las frases son semánticamente similares usando un
-        umbral de 0.8. Si la similitud del coseno es mayor que 0.8, las frases
-        se consideran similares (valor de 1). Si es 0.8 o menos, se consideran
-        no similares (valor de 0).
+        umbral de 0.8. Si la puntuación de similitud es mayor que 0.8, las
+        frases se consideran similares (valor de 1). Si es 0.8 o menos, se
+        consideran no similares (valor de 0).
       </p>
       <p>
-        La precisión de un modelo se obtiene comparando las predicciones con las
-        etiquetas reales del conjunto de datos. Si la etiqueta real es 'SI' (las
-        frases son similares), se toma como 1; si es 'NO' (las frases no son
-        similares), se toma como 0.
+        La evaluación de un modelo se realiza comparando las predicciones con
+        las etiquetas reales del conjunto de datos. Si la etiqueta real es 'SI'
+        (las frases son similares), se toma como 1; si es 'NO' (las frases no
+        son similares), se toma como 0.
       </p>
       <p>
-        La precisión del modelo es el porcentaje de predicciones correctas sobre el total, y se
-        muestra junto a cada modelo en la sección 'Modelos usados'."
+        Se calculan varias métricas para evaluar el rendimiento de cada modelo:
       </p>
+      <ul>
+        <li>
+          <strong>Precisión (Accuracy):</strong> Esta es la proporción de
+          predicciones correctas sobre el total. Indica cuántas veces el modelo
+          predijo correctamente si las frases eran o no similares.
+        </li>
+        <br />
+        <li>
+          <strong>Precisión (Precision):</strong> Esta es la proporción de
+          predicciones correctas de similitud (valor de 1) entre todas las
+          predicciones de similitud realizadas por el modelo. Indica cuántas de
+          las frases que el modelo pensó que eran similares eran realmente
+          similares.
+        </li>
+        <br />
+        <li>
+          <strong>Sensibilidad (Recall):</strong> Esta es la proporción de
+          frases similares que el modelo identificó correctamente. Indica
+          cuántas de las frases que eran realmente similares el modelo pudo
+          identificar.
+        </li>
+        <br />
+        <li>
+          <strong>Puntuación F1 (F1 Score):</strong> Esta es la media armónica
+          de la precisión y la sensibilidad, y proporciona un balance entre
+          ambas métricas. Un F1 Score más alto indica que el modelo tiene un
+          buen equilibrio entre precisión y sensibilidad.
+        </li>
+      </ul>
     </div>
     <div class="column">
       <h3>Evaluación de los modelos usados:</h3>
       <div class="model-list">
         <div *ngFor="let modelName of modelNames; let i = index">
-          <h5>Modelo {{ i + 1 }}: {{ modelName }}</h5>
-          <p>Precisión (Accuracy): {{ metrics[i].accuracy | number:'1.2-2' }}</p>
-          <p>Precisión (Precision): {{ metrics[i].precision | number:'1.2-2' }}</p>
-          <p>Sensibilidad (Recall): {{ metrics[i].recall | number:'1.2-2' }}</p>
-          <p>F1-Score: {{ metrics[i].f1Score | number:'1.2-2' }}</p>
+          <h4>Modelo {{ i + 1 }}: {{ modelName }}</h4>
+          <p>
+            Exactitud (Accuracy): {{ metrics[i].accuracy | number : "1.2-4" }}
+          </p>
+          <p>
+            Precisión (Precision): {{ metrics[i].precision | number : "1.2-4" }}
+          </p>
+          <p>
+            Exhaustividad/Sensibilidad (Recall):
+            {{ metrics[i].recall | number : "1.2-4" }}
+          </p>
+          <p>F1-Score: {{ metrics[i].f1Score | number : "1.2-4" }}</p>
         </div>
       </div>
-    </div>    
+    </div>
   </div>
   <table>
     <thead>
@@ -58,7 +87,7 @@
       <tr *ngFor="let result of results">
         <td>{{ result.frase_original }}</td>
         <td>{{ result.frase_adaptada }}</td>
-        <td>{{ result.etiqueta_real === 1 ? 'Sí' : 'No' }}</td>
+        <td>{{ result.etiqueta_real === 1 ? "Sí" : "No" }}</td>
         <td>
           <p *ngFor="let similarity of result.similitudes; let i = index">
             Modelo {{ i + 1 }}: {{ similarity | number : "1.3-3" }}
