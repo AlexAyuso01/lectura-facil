@@ -40,7 +40,7 @@ Esta aplicación permite cargar archivos CSV que contienen pares de frases y cal
 
 ## Formato de archivo CSV
 
-El archivo CSV debe tener un formato específico para funcionar correctamente con esta aplicación. Debe contener cuatro columnas separadas por punto y coma (;): tipo_frase_original, frase_original, frase_adaptada y semanticamente_similares. La aplicación procesará el archivo y calculará las similitudes semánticas entre las frases originales y adaptadas en cada fila.
+El archivo CSV debe tener un formato específico para funcionar correctamente con esta aplicación. Debe contener tres columnas separadas por punto y coma (;): frase_original, frase_adaptada y semanticamente_similares. La aplicación procesará el archivo y calculará las similitudes semánticas entre las frases originales y adaptadas en cada fila.
 
 ## Modelos de lenguaje utilizados
 
