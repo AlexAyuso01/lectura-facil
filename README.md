@@ -13,7 +13,6 @@ Esta aplicación permite cargar archivos CSV que contienen pares de frases y cal
 
 - Front-end: Angular
 - Back-end: Flask
-- Bootstrap (opcional, si lo utilizas)
 - Modelos de lenguaje de Hugging Face
 
 ## Cómo usar la aplicación
