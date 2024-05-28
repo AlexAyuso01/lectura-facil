@@ -65,26 +65,43 @@
             Carga un archivo CSV. Asegúrate de que esté en el formato adecuado,
             mencionado anteriormente.
           </li>
-          <li>
-            Una vez cargado el archivo, presiona el botón "Calcular
-            similitudes".
-          </li>
-          <li>
-            La aplicación comenzará a procesar el archivo y a calcular las
-            similitudes utilizando múltiples modelos de lenguaje. Este proceso
-            puede tardar un poco, dependiendo del tamaño del archivo y del
-            número de pares de frases.
-          </li>
-          <li>
-            Una vez finalizado el cálculo, los resultados se mostrarán en una
-            tabla. En ella, podrás ver las puntuaciones de similitud para cada
-            par de frases.
-          </li>
-          <li>
-            Compara los resultados de los diferentes modelos para obtener una
-            visión completa de la similitud semántica entre las frases.
-          </li>
         </ol>
+        <div class="steps-container">
+          <div class="left-column">
+            <h3>Para calcular similitudes</h3>
+            <ol class="section-text" start="2">
+              <li>
+                Una vez cargado el archivo, presiona el botón "Calcular similitudes".
+              </li>
+              <li>
+                La aplicación comenzará a procesar el archivo y a calcular las similitudes utilizando múltiples modelos de lenguaje. Este proceso puede tardar un poco, dependiendo del tamaño del archivo y del número de pares de frases.
+              </li>
+              <li>
+                Una vez finalizado el cálculo, los resultados se mostrarán en una tabla. En ella, podrás ver las puntuaciones de similitud para cada par de frases.
+              </li>
+              <li>
+                Compara los resultados de los diferentes modelos para obtener una visión completa de la similitud semántica entre las frases.
+              </li>
+            </ol>
+          </div>
+          <div class="right-column">
+            <h3>Para calcular métricas</h3>
+            <ol class="section-text" start="2">
+              <li>
+                Una vez cargado el archivo, presiona el botón "Calcular métricas".
+              </li>
+              <li>
+                El sistema evaluará métricas específicas basadas en criterios preestablecidos para análisis lingüístico avanzado.
+              </li>
+              <li>
+                Los resultados se muestran en una tabla. Incluyen los dos textos evaluados, la puntuación de similitud (ROUGE-1, ROUGE-L y WER), la puntuación de coherencia (METEOR), la puntuación de cohesión (ROUGE-L), la puntuación de redacción (TER) y la puntuación de fluidez (BLEU). Junto a una evaluación de la calificaion de estas métricas.
+              </li>
+              <li>
+                Finalmente observa los resultados obtenidos para obtener una visión general de la calidad de los textos.
+              </li>
+            </ol>
+          </div>
+        </div>
         <div class="input-container">
           <input
             id="file-upload"
@@ -96,6 +113,10 @@
         <button class="calculate-button" (click)="onSubmit()">
           Calcular similitudes
         </button>
+        <!-- Nuevo botón para calcular métricas -->
+        <button class="calculate-button metrics-button" (click)="onCalculateMetrics()">
+          Calcular métricas
+        </button>
         <div class="loading-container">
           <div class="spinner" [hidden]="!isLoading"></div>
         </div>
@@ -106,11 +127,12 @@
 
 <footer class="footer">
   <div class="footer-content">
-    <p>Jesús Vivo Castro</p>
+    <p>Jesús Vivo Castro | Alejandro Ayuso Exposito</p>
     <p>ETSIINF - Universidad Politécnica de Madrid</p>
-    <p>Trabajo de Fin de Grado - Lectura Fácil - 2023</p>
+    <p>Trabajo de Fin de Grado - Lectura Fácil - 2023 - 2024</p>
     <p>
       Contacto: <a href="mailto:j.vivo@alumnos.upm.es">j.vivo@alumnos.upm.es</a>
+                 | <a href="mailto:alejandro.ayusoex@alumnos.upm.es">alejandro.ayusoex@alumnos.upm.es</a>
     </p>
   </div>
 </footer>

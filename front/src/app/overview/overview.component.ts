@@ -64,4 +64,23 @@ export class OverviewComponent {
       }
     );
   }
+
+  onCalculateMetrics(): void {
+    if (this.file) {
+      this.isLoading = true;
+      this.resultsService.calculateMetrics(this.file).subscribe({
+        next: (response: any) => {
+          this.resultsService.setResults(response);
+          this.isLoading = false;
+          this.router.navigate(['/metrics']);  
+        },
+        error: (error: any) => {
+          console.error('Error al calcular las métricas:', error);
+          this.isLoading = false;
+        }
+      });
+    } else {
+      alert('Por favor, selecciona un archivo CSV primero.');
+    }
+  }  
 }

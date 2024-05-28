@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="header">
+        <button class="back-button" (click)="goToHomePage()">Regresar a la página principal</button>
+        <h1>Métricas de Evaluación</h1>
+    </div>
+    <div class="row">
+      <div class="column full-width">
+        <div class="metrics-explanation">
+            <div class="column">
+                <h3>Explicación de Métricas</h3>
+                <p><strong>BLEU:</strong> BLEU compara el texto traducido con textos de referencia considerados ideales. Evalúa la precisión de n-gramas, es decir, la aparición de secuencias consecutivas de palabras, ajustadas por la longitud del texto para evitar penalizar traducciones breves. Es ampliamente usado en la evaluación automática de traducciones.</p>
+                <p><strong>ROUGE:</strong> Esta métrica es esencial para evaluar resúmenes automáticos. ROUGE mide cuántos n-gramas, o grupos de palabras consecutivas, el resumen generado tiene en común con uno o varios textos de referencia. Favorece la inclusión de contenido relevante sobre su precisión literal.</p>
+                <p><strong>METEOR:</strong> METEOR mejora sobre BLEU al considerar sinónimos y la estructura gramatical de las oraciones. Evalúa la calidad de las traducciones no solo por la coincidencia exacta de términos, sino también por su similitud semántica, haciendo sus evaluaciones más alineadas con la interpretación humana.</p>
+                <p><strong>TER:</strong> La Tasa de Edición de Traducción (TER) cuenta las operaciones mínimas necesarias para que un texto traducido coincida con una referencia. A diferencia de otras métricas, en TER, un puntaje más bajo indica una mayor precisión, ya que requiere menos modificaciones.</p>
+                <p><strong>WER:</strong> La Tasa de Error por Palabra (WER) se usa predominantemente para evaluar sistemas de reconocimiento de voz. Mide el porcentaje de palabras que necesitan ser corregidas en la transcripción automática comparada con un texto de referencia.</p>
+            </div>
+            <div class="column">
+              <h3>Evaluación de Calidad</h3>
+              <p>Para evaluar la calidad de los textos adaptados, se opta por un análisis individual, el cual muestra para cada métrica el resultado y la evaluación de este y una evaluación general. La evaluación general de la calidad se determina utilizando un sistema de ponderación basado en la importancia de cada métrica. Esto asegura que las métricas más relevantes tengan un mayor impacto en la evaluación final de la calidad.</p>
+              <p><strong>Alta Calidad:</strong> Se alcanza alta calidad cuando el promedio ponderado de las métricas supera un umbral ajustado, reflejando la alta precisión y fidelidad del texto adaptado con respecto al original. Los umbrales han sido diseñados para ser rigurosos pero alcanzables, garantizando que solo los textos de la más alta calidad cumplan con estos criterios.<br>
+                <code class="code-style"  style="font-size: 1.2em">promedio_ponderado > 0.75 (considerando pesos específicos para cada métrica)</code>.
+              </p>
+              <p><strong>Calidad Media:</strong> Un texto se considera de calidad media cuando cumple con umbrales que indican una adaptación adecuada pero no excepcional. Estos umbrales son menos exigentes y permiten una mayor flexibilidad, asegurando que textos razonablemente adaptados sean reconocidos.<br>
+                <code class="code-style" style="font-size: 1.2em">0.5 < promedio_ponderado ≤ 0.75</code>.
+              </p>
+              <p><strong>Baja Calidad:</strong> Los textos que no alcanzan el mínimo establecido para la calidad media son clasificados como de baja calidad. Esto indica que las adaptaciones tienen desviaciones significativas del texto original, lo cual podría afectar la comprensibilidad o la fidelidad del contenido adaptado.<br>
+                <code class="code-style" style="font-size: 1.2em">promedio_ponderado ≤ 0.5</code>.
+              </p>
+              <p><strong>Fórmula de Ponderación:</strong> <br>
+                <b><code class="code-style"  style="font-size: 1.2em">promedio_ponderado = (Σ(value * weight) / Σ(weights))</code></b><br>
+                Donde 'value' es el valor normalizado de cada métrica y 'weight' es el peso asignado basado en la importancia de esa métrica.
+              </p>
+            </div>
+          </div>          
+        <table class="metrics-table">
+          <thead>
+            <tr>
+              <th>Frase Original</th>
+              <th>Frase Adaptada</th>
+              <th>Métricas Calculadas</th>
+              <th>Evaluación Individual de la Calidad</th>
+              <th>Evaluación General de la Calidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let metric of metrics">
+              <td>{{ metric.original }}</td>
+              <td>{{ metric.adapted }}</td>
+              <td>
+                <ul>
+                  <li>BLEU: {{ metric.metrics['BLEU'] | number:'1.2-2' }}</li>
+                  <li>ROUGE-1: {{ metric.metrics['ROUGE-1'] | number:'1.2-2' }}</li>
+                  <li>ROUGE-L: {{ metric.metrics['ROUGE-L'] | number:'1.2-2' }}</li>
+                  <li>METEOR: {{ metric.metrics['METEOR'] | number:'1.2-2' }}</li>
+                  <li>TER: {{ metric.metrics['TER'] | number:'1.2-2' }}</li>
+                  <li>WER: {{ metric.metrics['WER'] | number:'1.2-2' }}</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li *ngFor="let quality of metric.individual_qualities | keyvalue">
+                    {{ quality.key }}: <span [ngStyle]="{'color': getColor(quality.value)}">{{ quality.value | uppercase }}</span>
+                  </li>
+                </ul>
+              </td>
+              <td [ngStyle]="{'color': getColor(metric.overall_quality)}">
+                {{ metric.overall_quality | uppercase }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Alejandro Ayuso Exposito</p>
+      <p>ETSIINF - Universidad Politécnica de Madrid</p>
+      <p>Trabajo de Fin de Grado - Lectura Fácil - 2024</p>
+      <p>
+        Contacto: <a href="mailto:alejandro.ayusoex@alumnos.upm.es">alejandro.ayusoex@alumnos.upm.es</a>
+      </p>
+    </div>
+  </footer>
+  

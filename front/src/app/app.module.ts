@@ -9,6 +9,7 @@ import { ResultsComponent } from './results/results.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomToasterComponent } from './custom-toaster/custom-toaster.component';
+import { MetricsComponent } from './metrics/metrics.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CustomToasterComponent } from './custom-toaster/custom-toaster.componen
     OverviewComponent,
     ResultsComponent,
     CustomToasterComponent,
+    MetricsComponent,
   ],
   imports: [
     BrowserModule,
