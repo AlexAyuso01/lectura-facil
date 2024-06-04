@@ -66,9 +66,23 @@ class FlaskTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.get_json()['error'], "No file part")
 
-    # Test para el caso en el que el archivo CSV no es válido
-    def test_upload_file_invalid_csv(self):
-        pass  # Eliminado debido a problemas persistentes con el test
+    @patch('app.pd.read_csv')
+    def test_upload_file_invalid_csv(self, mock_read_csv):
+        mock_read_csv.side_effect = pd.errors.ParserError("Error parsing CSV")
+
+        data_csv = "this is not a valid CSV file"
+        mock_csv = (BytesIO(data_csv.encode()), "mock.csv")
+
+        response = self.app.post(
+            '/upload',
+            content_type='multipart/form-data',
+            data={'file': mock_csv}
+        )
+
+        self.assertEqual(response.status_code, 500)
+        response_data = response.get_json()
+        self.assertIn('error', response_data)
+        self.assertEqual(response_data['error'], "Error parsing CSV")
 
 class AdditionalTests(unittest.TestCase):
     def setUp(self):
