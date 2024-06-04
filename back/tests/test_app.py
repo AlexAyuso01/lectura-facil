@@ -133,7 +133,9 @@ class AdditionalTests(unittest.TestCase):
         )
 
         self.assertEqual(response.status_code, 500)
-        self.assertIn('error', response.get_json())
+        response_data = response.get_json()
+        self.assertIn('error', response_data)
+        self.assertEqual(response_data['error'], "Error parsing CSV")
 
 class EvaluationTestCase(unittest.TestCase):
     def test_evaluate_quality_high(self):
@@ -217,4 +219,4 @@ class EvaluationTestCase(unittest.TestCase):
         self.assertEqual(result, "low")
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbosity=2)
